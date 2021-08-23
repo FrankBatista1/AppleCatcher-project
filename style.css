@@ -1,17 +1,17 @@
 body{
     padding:0;
     margin:0;
-    background-image: url('./Images/1507776.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: black;
+    background-image: url('./Images/ce4f9092-606e-48d6-a6a8-cad7e0b6e21d.jpeg');
+    background-color: rgb(4, 51, 4);
 }
 
 
 #canvas{
-    height: 800px;
-    width: 800px;
-    border:1px solid rgb(105, 11, 11);
+    height: 600px;
+    width: 600px;
+    border:1px solid rgb(11, 66, 16);
     background-color: black;
     position: absolute;
     top:50%;
