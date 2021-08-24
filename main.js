@@ -17,6 +17,20 @@ const player = {
   moving: false
 };
 
+const apple = {
+  x: 130,
+  y: -10,
+  widht: 32,
+  height: 32,
+  speed: 5,
+}
+
+class Apples{
+  constructor(x){
+    this.x = x;
+  }
+}
+
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
   ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
 }
@@ -34,47 +48,37 @@ applesImg.src = './Images/apple.png'
 const background = new Image()
 background.src = './Images/ce4f9092-606e-48d6-a6a8-cad7e0b6e21d.jpeg' 
 
- let noOfApples = 30;
- let apples = [];
+// let counter = 0;
+// function drawTheApple(){
+//     let randomNumber = (Math.floor(Math.random * 200))
+//     ctx.drawImage(applesImg, -10,randomNumber)
+//     return counter++;
+// }
+// const drawApples = setInterval(drawTheApple,6000)
+// function stopInterval() {
+//   if(counter === 20){
+//     clearInterval(drawApples)
+//     }
+//   } 
+// drawTheApple()
+// stopInterval()
 
-function Apples(x, y){
-  this.x = x;
-  this.y = y;
 
-  this.show = function(){
-    ctx.drawImage(applesImg,this.x, this.y,32,32)
-  }
-  this.fall = function(){
-    this.y = this.y - 1 
-  }
-}
-
-for(let i = 0; i < noOfApples; i++){
-  let x = Math.floor(Math.random() * canvas.widht);
-  let y = Math.floor(Math.random() * -2);  
-  apples[i] = new Apples(x, y)
-}
-function drawApples(){
-  for(let i = 0; i < noOfApples; i++){
-    apples[i].show
-    apples[i].fall
-  }
-}
 
 
 
 window.addEventListener('keydown',function(e){
     keys[e.key] = true;
-    console.log(keys)
     player.moving = true;
 })
 
 window.addEventListener('keyup', (e) => {
    delete keys[e.key];
-   console.log(keys)
    player.moving = false
 })
-
+function appleFalling(){
+    return apple.y = apple.y + 4
+}
 function movePlayer(){
   if(keys['ArrowUp'] && player.y > 210){
     player.y -= player.speed;
@@ -124,10 +128,12 @@ function animate(){
     ctx.clearRect(0,0,canvas.widht, canvas.height)
     ctx.drawImage(background,0,0,canvas.widht,canvas.height)
     drawSprite(playerSprite, player.widht * player.frameX, player.height * player.frameY, player.widht, player.height, player.x, player.y, player.widht, player.height)
+    ctx.drawImage(applesImg,apple.x,apple.y)
+    appleFalling()
     requestAnimationFrame(animate);
     movePlayer()
     walkingAnimation()
-    drawApples()
+
   }
  
 }
