@@ -1,3 +1,5 @@
+
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 canvas.height = 400
@@ -17,23 +19,50 @@ const player = {
   moving: false
 };
 
-const apple = {
-  x: 130,
-  y: -10,
-  widht: 32,
-  height: 32,
-  speed: 5,
-}
+
 
 class Apples{
-  constructor(x){
-    this.x = x;
+  constructor(){
+    this.x = 130,
+    this.y = -10,
+    this.width = 32,
+    this.height = 32
+    this.speed = 5
   }
+  
+  appleRandomized(){
+    this.x = Math.floor(Math.random() * 250)
+  }
+}
+const apple = new Apples
+const apple2 = new Apples
+const apple3 = new Apples
+const apple4 = new Apples
+apple.appleRandomized()
+apple2.appleRandomized()
+apple3.appleRandomized()
+apple4.appleRandomized()
+
+function appleFalling(){
+  apple4.y += 3
+  apple3.y += 1.9
+  apple2.y += 3.2
+  apple.y += 4
 }
 
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
   ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
 }
+
+// function drawApples(img, sX, sY,count){
+//   count++;
+//   if(count % 40 == 0){
+//   ctx.drawImage(img, sX, sY)
+//     console.log('yei')
+//   } else{
+//     console.log('hey')
+//   }
+// }
 
 
 
@@ -76,9 +105,7 @@ window.addEventListener('keyup', (e) => {
    delete keys[e.key];
    player.moving = false
 })
-function appleFalling(){
-    return apple.y = apple.y + 4
-}
+
 function movePlayer(){
   if(keys['ArrowUp'] && player.y > 210){
     player.y -= player.speed;
@@ -111,14 +138,14 @@ function walkingAnimation(){
 }
 
 
-let fpsInterval, startTime, now, then, elapsed;
+let fpsInterval, now, then, elapsed;
 
 function startAnimating(fps){
   fpsInterval = 1000/fps
   then = Date.now()
-  startTime = then;
   animate();
 }
+
 function animate(){
   requestAnimationFrame(animate)
   now = Date.now()
@@ -129,9 +156,12 @@ function animate(){
     ctx.drawImage(background,0,0,canvas.widht,canvas.height)
     drawSprite(playerSprite, player.widht * player.frameX, player.height * player.frameY, player.widht, player.height, player.x, player.y, player.widht, player.height)
     ctx.drawImage(applesImg,apple.x,apple.y)
+    ctx.drawImage(applesImg,apple2.x,apple2.y)
+    ctx.drawImage(applesImg,apple3.x,apple3.y)
+    ctx.drawImage(applesImg,apple4.x,apple4.y)
     appleFalling()
-    requestAnimationFrame(animate);
     movePlayer()
+    // console.log((Number(then.toFixed(0))))
     walkingAnimation()
 
   }
