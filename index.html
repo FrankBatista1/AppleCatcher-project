@@ -15,12 +15,16 @@
     <canvas id="canvas" style="display: none;">Your browser doesn't support canvas</canvas>
     <div id="start" style="display:block">
         <p>Just catch some apples<br>Use arrow keys to move</p>
-        <a href="#" onclick="startGame()">Start Game<br>(Level 1)</a>
+        <a href="#" onclick="startGame(10)">Start Game</a>
     </div>
-    <div id="game-over" style="display:none;">
-        <h1>Game over</h1>
-        <a href="#" onclick="startGame()">Start Game</a>
+    <div id="next-level" style="display:none;">
+        <h1>Well done</h1>
+        <a href="#" onclick="startGame(15)">next-level</a>
     </div>
+    <!-- <div id="next-level2" style="display:none;">
+        <h1>Nice</h1>
+        <a href="#" onclick="startGame(20)">next-level</a>
+    </div> -->
  
     <script src="main.js"></script>
 </body>

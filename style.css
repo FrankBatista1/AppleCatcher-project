@@ -22,7 +22,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
-#start, #game-over {
+#start, #next-level, #next-level2{
     font-family: 'Chakra Petch', sans-serif;
     color: #ffffff;
     padding: 20px;
@@ -36,7 +36,7 @@ body{
     text-align: center;
 }
 
-#start a, #game-over a {
+#start a, #next-level a ,#next-level2 a{
     border: 3px solid #ffffff;
     color: #ffffff;
     text-decoration: none;
@@ -51,6 +51,4 @@ body{
     
 }
 
-#start a:hover, #game-over a:hover { background-color: #ffffff98; color: rgb(9, 65, 9)
-
-
+#start a:hover, #next-level a:hover #next-level2 a:hover { background-color: #ffffff98; color: rgb(9, 65, 9)}
