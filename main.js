@@ -21,12 +21,6 @@ const player = {
 
 
 
-function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
-  ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
-}
-
-
-
 const catched = new Image();
 catched.src = './Images/apple eaten.png'
 const playerSprite = new Image();
@@ -119,6 +113,7 @@ function getDistance(x1,y1,x2,y2){
   return Math.hypot(xDist, yDist);
 }
 
+
 function animate(){
   requestAnimationFrame(animate)
   now = Date.now()
@@ -127,7 +122,7 @@ function animate(){
     then = now - (elapsed % fpsInterval)
     ctx.clearRect(0,0,canvas.widht, canvas.height)
     ctx.drawImage(background,0,0,canvas.widht,canvas.height)
-    drawSprite(playerSprite, player.widht * player.frameX, player.height * player.frameY, player.widht, player.height, player.x, player.y, player.widht, player.height)
+    ctx.drawImage(playerSprite, player.widht * player.frameX, player.height * player.frameY, player.widht, player.height, player.x, player.y, player.widht, player.height)
     for (let i = 0; i < apples.length; i++){
       apples[i].draw()
       apples[i].fall()
@@ -136,14 +131,13 @@ function animate(){
          apples.splice(i, 1);
       }
     }
-    
       
     movePlayer()
-    // console.log((Number(then.toFixed(0))))
     walkingAnimation()
 
 }
 }
+
 
 
 startAnimating(30)

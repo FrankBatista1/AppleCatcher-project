@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dodge game</title>
+    <title>AppleCatcher</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+        </style>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+    
+    <canvas id="canvas" style="display: none;">Your browser doesn't support canvas</canvas>
+    <div id="start" style="display:block">
+        <p>Just catch some apples<br>Use arrow keys to move</p>
+        <a href="#" onclick="startGame()">Start Game<br>(Level 1)</a>
+    </div>
+    <div id="game-over" style="display:none;">
+        <h1>Game over</h1>
+        <a href="#" onclick="startGame()">Start Game</a>
+    </div>
  
     <script type=module src="main.js"></script>
 </body>
