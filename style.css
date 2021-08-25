@@ -24,10 +24,10 @@ body{
 }
 #start, #next-level, #next-level2{
     font-family: 'Chakra Petch', sans-serif;
-    color: #ffffff;
+    color: #000000;
     padding: 20px;
     position: fixed;
-    top:50%;
+    top:29%;
     left:50%;
     margin-top: -100px;
     margin-left: -100px;

@@ -174,17 +174,8 @@ function startGame(numberOfApples) {
   // playing = true;
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
-  let nextlevel = document.getElementById("next-level");
   startDiv.style.display = "none";
   gameCanvas.style.display = "block";
-  nextlevel.style.display = "none";
   start(numberOfApples);
 }
-function nextlevel() {
-  let startDiv = document.getElementById("start");
-  let gameCanvas = document.getElementById("canvas");
-  let nextlevel = document.getElementById("next-level");
-  startDiv.style.display = "none";
-  gameCanvas.style.display = "none";
-  nextlevel.style.display = "block";
-}
+
