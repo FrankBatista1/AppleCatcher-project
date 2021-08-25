@@ -1,5 +1,5 @@
 
-
+function start(){
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 canvas.height = 400
@@ -98,7 +98,6 @@ function walkingAnimation(){
   }
 }
 
-let counter = 0
 let fpsInterval, now, then, elapsed;
 
 function startAnimating(fps){
@@ -140,4 +139,15 @@ function animate(){
 
 
 
+
 startAnimating(30)
+}
+function startGame() {
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let gameOver = document.getElementById("game-over");
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "block";
+  gameOver.style.display = "none";
+  start();
+}
