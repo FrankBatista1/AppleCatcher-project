@@ -1,4 +1,4 @@
-let playing = true;
+
 function start(numberOfApples) {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
@@ -6,7 +6,7 @@ function start(numberOfApples) {
   canvas.widht = 400;
 
   //tracks keys the player is pressing
-  const keys = [];
+  let keys = [];
 
   let player = {
     x: 130,
@@ -15,7 +15,7 @@ function start(numberOfApples) {
     height: 48,
     frameX: 0,
     frameY: 0,
-    speed: 9,
+    speed: 10,
     moving: false,
   };
 
@@ -38,7 +38,7 @@ function start(numberOfApples) {
         (this.y = -400),
         (this.width = 32),
         (this.height = 32);
-      this.speed = Math.random() * 4 + 2;
+      this.speed = Math.random() * 3.1 + 1.8;
     }
     draw() {
       ctx.drawImage(applesImg, this.x, this.y);
@@ -114,6 +114,7 @@ function start(numberOfApples) {
       alert('you win')
       apples = [];
       applesCatched = [];
+      keys = [];
       for (let i = 0; i < numberOfApples; i++) {
         apples.push(new Apples());
       }
@@ -152,6 +153,7 @@ function start(numberOfApples) {
             alert('you lost')
             apples = [];
             applesCatched = [];
+            keys = [];
             for (let i = 0; i < numberOfApples; i++) {
               apples.push(new Apples());
             }
@@ -171,7 +173,6 @@ function start(numberOfApples) {
 }
 
 function startGame(numberOfApples) {
-  // playing = true;
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
   startDiv.style.display = "none";
