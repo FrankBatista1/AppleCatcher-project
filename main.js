@@ -1,4 +1,6 @@
 
+let appleEaten = new Audio('./Sound/AppleEaten2.wav');
+let soundTrack = new Audio('./Sound/01 - title screen.mp3')
 
 let apples = [];
 let applesCatched = [];
@@ -166,6 +168,7 @@ function start() {
         apples[i].draw();
         apples[i].fall();
         if (getDistance(player.x, player.y, apples[i].x, apples[i].y) < 30) {
+          appleEaten.play()
           applesCatched.push(apples[i]);
           apples.splice(i, 1);
         }
@@ -196,6 +199,7 @@ function start() {
 
 
 function startEasy() {
+  soundTrack.play();
   numberOfApples = easyMode
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
@@ -206,6 +210,7 @@ function startEasy() {
   start();
 }
 function startNormal() {
+  soundTrack.play();
   numberOfApples = easyMode
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
@@ -216,6 +221,7 @@ function startNormal() {
   start();
 }
 function startHard() {
+  soundTrack.play();
   numberOfApples = hardMode
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
@@ -226,6 +232,7 @@ function startHard() {
   start();
 }
 function startImposible() {
+  soundTrack.play();
   numberOfApples = imposibleMode
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
@@ -237,6 +244,7 @@ function startImposible() {
 }
 
 function reset(){
+  soundTrack.pause()
   apples = [];
   applesCatched = [];
   keys = [];
@@ -257,9 +265,9 @@ function reset(){
 }
 
 function rerenderApples(numberOfApplesRerendered){
-
+  soundTrack.play();
   numberOfApples = numberOfApplesRerendered
-  
+
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
   let resetGame = document.getElementById("reset");
