@@ -10,6 +10,9 @@ body{
     background-image: url('./Images/ce4f9092-606e-48d6-a6a8-cad7e0b6e21d.jpeg');
     background-color: rgb(4, 51, 4);
 }
+.logo{
+    width: 80%;
+}
 
 
 #canvas{
@@ -27,13 +30,12 @@ body{
     color: #000000;
     padding: 20px;
     position: fixed;
-    top:28%;
     left:50%;
-    margin-top: -100px;
-    margin-left: -100px;
+    margin-top: -10px;
+    margin-left: -10px;
     height:200px;
-    width:250px;
     text-align: center;
+    transform: translate(-50%,-50%);
 }
 
 #start a, #next-level a ,#next-level2 a{
@@ -46,9 +48,11 @@ body{
     display: block;
     width: 200px;
     text-align: center;
-    font-size:2em;
+    font-size:1em;
     display: inline-block;
+    margin: 1px;
     
 }
+
 
 #start a:hover, #next-level a:hover #next-level2 a:hover { background-color: #ffffff98; color: rgb(9, 65, 9)}
