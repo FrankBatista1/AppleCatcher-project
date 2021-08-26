@@ -6,7 +6,15 @@ let keys = [];
 let timesLost = 0
 let timesWon = 0
 
-function start(numberOfApples) {
+let easyMode = 8
+let normalMode = 13
+let hardMode = 18
+let imposibleMode = 20
+
+let numberOfApples = 0
+
+
+function start() {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   canvas.height = 400;
@@ -186,14 +194,46 @@ function start(numberOfApples) {
   
 }
 
-function startGame(numberOfApples) {
+
+function startEasy() {
+  numberOfApples = easyMode
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
   let resetGame = document.getElementById("reset")
   startDiv.style.display = "none";
   gameCanvas.style.display = "block";
   resetGame.style.display = "block"
-  start(numberOfApples);
+  start();
+}
+function startNormal() {
+  numberOfApples = easyMode
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset")
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "block";
+  resetGame.style.display = "block"
+  start();
+}
+function startHard() {
+  numberOfApples = hardMode
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset")
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "block";
+  resetGame.style.display = "block"
+  start();
+}
+function startImposible() {
+  numberOfApples = imposibleMode
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset")
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "block";
+  resetGame.style.display = "block"
+  start();
 }
 
 function reset(){
@@ -217,6 +257,9 @@ function reset(){
 }
 
 function rerenderApples(numberOfApplesRerendered){
+
+  numberOfApples = numberOfApplesRerendered
+  
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
   let resetGame = document.getElementById("reset");
