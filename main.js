@@ -4,6 +4,8 @@ function start(numberOfApples) {
   const ctx = canvas.getContext("2d");
   canvas.height = 400;
   canvas.widht = 400;
+  let value = window.devicePixelRatio;
+  value = 2
 
   //tracks keys the player is pressing
   let keys = [];
@@ -61,6 +63,7 @@ function start(numberOfApples) {
     delete keys[e.key];
     player.moving = false;
   });
+ 
 
   function movePlayer() {
     if (keys["ArrowUp"] && player.y > 210) {
@@ -94,7 +97,8 @@ function start(numberOfApples) {
   }
 
   let fpsInterval, now, then, elapsed;
-
+  let timesLost = 0
+  let timesWon = 0
  
 
   function getDistance(x1, y1, x2, y2) {
@@ -111,12 +115,14 @@ function start(numberOfApples) {
   }
   function checkIfWin(){
     if(applesCatched.length === numberOfApples){
-      alert('you win')
+      alert('You won')
       apples = [];
       applesCatched = [];
       keys = [];
+      timesWon++
       for (let i = 0; i < numberOfApples; i++) {
         apples.push(new Apples());
+        
       }
     }
 }
@@ -131,6 +137,8 @@ function start(numberOfApples) {
       then = now - (elapsed % fpsInterval);
       ctx.clearRect(0, 0, canvas.widht, canvas.height);
       ctx.drawImage(background, 0, 0, canvas.widht, canvas.height);
+      ctx.fillText(`Wins: ${timesWon}`, 250, 85)
+      ctx.fillText(`Losses: ${timesLost}`, 250, 100)
       ctx.drawImage(
         playerSprite,
         player.widht * player.frameX,
@@ -150,10 +158,11 @@ function start(numberOfApples) {
           apples.splice(i, 1);
         }
           if (apples[i].y > 400){
-            alert('you lost')
+            alert('You lost')
             apples = [];
             applesCatched = [];
             keys = [];
+            timesLost++
             for (let i = 0; i < numberOfApples; i++) {
               apples.push(new Apples());
             }
@@ -161,10 +170,11 @@ function start(numberOfApples) {
           
           
       }
-
+      
       movePlayer();
       walkingAnimation();
       checkIfWin();
+      
      
     }
   }
@@ -175,8 +185,17 @@ function start(numberOfApples) {
 function startGame(numberOfApples) {
   let startDiv = document.getElementById("start");
   let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset")
   startDiv.style.display = "none";
   gameCanvas.style.display = "block";
+  resetGame.style.display = "block"
   start(numberOfApples);
 }
+
+function reset(){
+
+}
+
+
+
 
