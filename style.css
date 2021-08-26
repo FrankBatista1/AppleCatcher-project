@@ -59,6 +59,10 @@ body{
     display: inline-block;
     margin: 1px;
 }
+#reset{
+    text-align: center;
+    padding-top: 20px;
+}
 #reset a{
     font-family: 'Chakra Petch', sans-serif;
     padding-top: 300px;
@@ -75,7 +79,37 @@ body{
     display: inline-block;
     margin: 1px;
 }
+#choose-difficulty{
+    font-family: 'Chakra Petch', sans-serif;
+    color: #000000;
+    padding: 20px;
+    position: fixed;
+    left:50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    height:200px;
+    top: 20%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    
+}
+#choose-difficulty a{
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    text-align: center;
+    font-size:1em;
+    display: inline-block;
+    margin: 1px;
+}
+
 
 
 #start a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}
 #reset a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}
+#choose-difficulty a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}

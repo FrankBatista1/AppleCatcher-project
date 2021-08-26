@@ -193,7 +193,14 @@ function startGame(numberOfApples) {
 }
 
 function reset(){
-
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset");
+  let chooseDifficulty = document.getElementById("choose-difficulty")
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "none";
+  resetGame.style.display = "none"
+  chooseDifficulty.style.display ="block"
 }
 
 
