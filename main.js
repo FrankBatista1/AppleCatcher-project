@@ -48,13 +48,13 @@ function start() {
   const catched = new Image();
   catched.src = "./Images/apple eaten.png";
   const playerSprite = new Image();
-  playerSprite.src = "./Images/gau.png";
+  playerSprite.src = "./Images/adam.png";
 
   const applesImg = new Image();
   applesImg.src = "./Images/apple.png";
 
   const background = new Image();
-  background.src = "./Images/ce4f9092-606e-48d6-a6a8-cad7e0b6e21d.jpeg";
+  background.src = "./Images/Forest1.jpeg";
   
 
   class Apples {
@@ -89,7 +89,7 @@ function start() {
  
 
   function movePlayer() {
-    if (keys["ArrowUp"] && player.y > 210) {
+    if (keys["ArrowUp"] && player.y > 220) {
       player.y -= player.speed;
       player.frameY = 3;
       player.moving = true;
@@ -163,8 +163,8 @@ function start() {
       then = now - (elapsed % fpsInterval);
       ctx.clearRect(0, 0, canvas.widht, canvas.height);
       ctx.drawImage(background, 0, 0, canvas.widht, canvas.height);
-      ctx.fillText(`Waves Won: ${timesWon}`, 220, 85)
-      ctx.fillText(`Waves Lost: ${timesLost}`, 220, 100)
+      ctx.fillText(`Waves Won: ${timesWon}`, 220, 361)
+      ctx.fillText(`Waves Lost: ${timesLost}`, 220, 376)
       ctx.drawImage(
         playerSprite,
         player.widht * player.frameX,
