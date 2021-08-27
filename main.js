@@ -41,7 +41,7 @@ function start() {
     height: 48,
     frameX: 0,
     frameY: 0,
-    speed: 7,
+    speed: 9,
     moving: false,
   };
 
@@ -141,7 +141,7 @@ function start() {
     }
     else if(applesCatched.length === numberOfApples){
       winSoundEffect.play()
-      alert('You won')
+      alert('Wave passed')
       apples = [];
       applesCatched = [];
       keys = [];
@@ -189,7 +189,7 @@ function start() {
           }
           else if(apples[i].y > 400){
             loseSoundEffect.play()
-            alert('You lost')
+            alert('You missed an apple')
             apples = [];
             applesCatched = [];
             keys = [];
@@ -315,7 +315,7 @@ function rerenderApples(numberOfApplesRerendered){
         (this.y = -400),
         (this.width = 32),
         (this.height = 32);
-      this.speed = Math.random() * 3.1 + 1.8;
+      this.speed = Math.random() * 3.1 + 1.5;
     }
     draw() {
       ctx.drawImage(applesImg, this.x, this.y);

@@ -10,17 +10,20 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
         </style>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+        </style>
 </head>
 <body>
     <canvas id="canvas" style="display: none;">Your browser doesn't support canvas</canvas>
     <div id="start" style="display:block">
         <img class="logo" src="./Images/Logo.png" alt="logo">
         <img class="apple" src="./Images/HarmfulDisgustingHellbender-max-1mb.gif">
-        <h1>You have to catch every single apple<br>You have to catch 3 waves in order to win<br>If you miss an apple 3 times you lose<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
+        <h1>Catch every single apple<br>Catch 3 waves in order to win<br>If you miss an apple 3 times you lose<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
         <a href="#" onclick="startEasy()">EASY</a>
         <a href="#" onclick="startNormal()">NORMAL</a>
         <a href="#" onclick="startHard()">HARD</a>
-        <a href="#" onclick="startImposible()">IMPOSIBLE</a>
+        <a href="#" onclick="startImposible()">IMPOSSIBLE</a>
     </div>
     <div id="reset" style="display:none;">
         <a href="#" onclick="reset()">RESET DIFFICULTY</a>
@@ -32,7 +35,7 @@
         <a href="#" onclick="rerenderApples(easyMode)">EASY</a>
         <a href="#" onclick="rerenderApples(normalMode)">NORMAL</a>
         <a href="#" onclick="rerenderApples(hardMode)">HARD</a>
-        <a href="#" onclick="rerenderApples(imposibleMode)">IMPOSIBLE</a>
+        <a href="#" onclick="rerenderApples(imposibleMode)">IMPOSSIBLE</a>
     </div>
     <div id="won" style="display: none;">
         <img class="winimg"src="./Images/won.png" alt="You won">
