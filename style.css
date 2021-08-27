@@ -111,10 +111,61 @@ body{
     width: 20%;
     
 }
+#lost a{
+    font-family: 'Chakra Petch', sans-serif;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    text-align: center;
+    font-size:1em;
+    display: inline-block;
+    margin: 240px;
+}
+.lostimg{
+    width: 50%;
+}
+#lost{
+    position: fixed;
+    left:50%;
+    height: 100px;
+    top: 35%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+#won{
+    position: absolute;
+    left:50%;
+    height: 100px;
+    top: 26%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+#won a{
+    font-family: 'Chakra Petch', sans-serif;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    text-align: center;
+    font-size:1em;
+    display: inline-block;
+    margin: 130px;
+}
+
 
 
 
 #start a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}
 #reset a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}
 #choose-difficulty a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}
-
+#lost a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}
+#won a:hover{ background-color: #ffffff98; color: rgb(9, 65, 9)}

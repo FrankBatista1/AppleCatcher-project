@@ -16,7 +16,7 @@
     <div id="start" style="display:block">
         <img class="logo" src="./Images/Logo.png" alt="logo">
         <img class="apple" src="./Images/HarmfulDisgustingHellbender-max-1mb.gif">
-        <h1>You have to catch every single apple<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
+        <h1>You have to catch every single apple<br>You have to catch 3 waves in order to win<br>If you miss an apple 3 times you lose<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
         <a href="#" onclick="startEasy()">EASY</a>
         <a href="#" onclick="startNormal()">NORMAL</a>
         <a href="#" onclick="startHard()">HARD</a>
@@ -34,7 +34,14 @@
         <a href="#" onclick="rerenderApples(hardMode)">HARD</a>
         <a href="#" onclick="rerenderApples(imposibleMode)">IMPOSIBLE</a>
     </div>
-    
+    <div id="won" style="display: none;">
+        <img class="winimg"src="./Images/won.png" alt="You won">
+        <a href="#" onclick="reset()">PLAY AGAIN</a>
+    </div>
+    <div id="lost" style="display: none;">
+        <img class="lostimg"src="./Images/game_overyell.png" alt="Game over">
+        <a href="#" onclick="reset()">PLAY AGAIN</a>
+    </div>
  
     <script src="main.js"></script>
 </body>

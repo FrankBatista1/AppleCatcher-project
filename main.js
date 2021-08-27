@@ -1,7 +1,14 @@
 
+
+
+
 let appleEaten = new Audio('./Sound/AppleEaten2.wav');
 let soundTrack = new Audio('./Sound/01 - title screen.mp3')
 let click = new Audio('./Sound/multimedia_rollover_017.mp3')
+let loseSoundEffect = new Audio('./Sound/lose.wav')
+let winSoundEffect = new Audio("./Sound/win.wav")
+let winnerSoundEffect = new Audio("./Sound/495005__evretro__win-video-game-sound.wav")
+let looserSoundEffect = new Audio('./Sound/533034__evretro__8-bit-game-over-sound-tune.wav')
 
 let apples = [];
 let applesCatched = [];
@@ -129,7 +136,11 @@ function start() {
     animate();
   }
   function checkIfWin(){
-    if(applesCatched.length === numberOfApples){
+    if(timesWon === 3){
+      winner()
+    }
+    else if(applesCatched.length === numberOfApples){
+      winSoundEffect.play()
       alert('You won')
       apples = [];
       applesCatched = [];
@@ -152,8 +163,8 @@ function start() {
       then = now - (elapsed % fpsInterval);
       ctx.clearRect(0, 0, canvas.widht, canvas.height);
       ctx.drawImage(background, 0, 0, canvas.widht, canvas.height);
-      ctx.fillText(`Wins: ${timesWon}`, 250, 85)
-      ctx.fillText(`Losses: ${timesLost}`, 250, 100)
+      ctx.fillText(`Waves Won: ${timesWon}`, 220, 85)
+      ctx.fillText(`Waves Lost: ${timesLost}`, 220, 100)
       ctx.drawImage(
         playerSprite,
         player.widht * player.frameX,
@@ -173,7 +184,11 @@ function start() {
           applesCatched.push(apples[i]);
           apples.splice(i, 1);
         }
-          if (apples[i].y > 400){
+          if(timesLost === 3){
+            looser()
+          }
+          else if(apples[i].y > 400){
+            loseSoundEffect.play()
             alert('You lost')
             apples = [];
             applesCatched = [];
@@ -261,11 +276,16 @@ function reset(){
   let gameCanvas = document.getElementById("canvas");
   let resetGame = document.getElementById("reset");
   let chooseDifficulty = document.getElementById("choose-difficulty")
+  let gameWinner = document.getElementById('won')
+  let gameLooser = document.getElementById('lost')
+  
   
   startDiv.style.display = "none";
   gameCanvas.style.display = "none";
   resetGame.style.display = "none"
   chooseDifficulty.style.display ="block"
+  gameLooser.style.display = "none"
+  gameWinner.style.display = "none"
 
   
 }
@@ -283,8 +303,8 @@ function rerenderApples(numberOfApplesRerendered){
   
   startDiv.style.display = "none";
   gameCanvas.style.display = "block";
-  resetGame.style.display = "block"
-  chooseDifficulty.style.display ="none"
+  resetGame.style.display = "block";
+  chooseDifficulty.style.display ="none";
   
   const applesImg = new Image();
   applesImg.src = "./Images/apple.png";
@@ -309,6 +329,53 @@ function rerenderApples(numberOfApplesRerendered){
     apples.push(new Apples());
   }
 }
-
+function winner(){
+  soundTrack.pause()
+  winnerSoundEffect.play()
+  apples = [];
+  applesCatched = [];
+  keys = [];
+  timesLost = 0;
+  timesWon = 0;
+  
+  
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset");
+  let chooseDifficulty = document.getElementById("choose-difficulty")
+  let gameWinner = document.getElementById('won')
+  let gameLooser = document.getElementById('lost')
+  
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "none";
+  resetGame.style.display = "none"
+  chooseDifficulty.style.display = "none"
+  gameLooser.style.display = "none"
+  gameWinner.style.display = "block"
+}
+function looser(){
+  soundTrack.pause()
+  looserSoundEffect.play()
+  apples = [];
+  applesCatched = [];
+  keys = [];
+  timesLost = 0;
+  timesWon = 0;
+  
+  
+  let startDiv = document.getElementById("start");
+  let gameCanvas = document.getElementById("canvas");
+  let resetGame = document.getElementById("reset");
+  let chooseDifficulty = document.getElementById("choose-difficulty")
+  let gameWinner = document.getElementById('won')
+  let gameLooser = document.getElementById('lost')
+  
+  startDiv.style.display = "none";
+  gameCanvas.style.display = "none";
+  resetGame.style.display = "none"
+  chooseDifficulty.style.display = "none"
+  gameWinner.style.display = "none"
+  gameLooser.style.display = "block"
+}
 
 
