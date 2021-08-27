@@ -1,6 +1,7 @@
 
 let appleEaten = new Audio('./Sound/AppleEaten2.wav');
 let soundTrack = new Audio('./Sound/01 - title screen.mp3')
+let click = new Audio('./Sound/multimedia_rollover_017.mp3')
 
 let apples = [];
 let applesCatched = [];
@@ -11,7 +12,7 @@ let timesWon = 0
 let easyMode = 8
 let normalMode = 13
 let hardMode = 18
-let imposibleMode = 20
+let imposibleMode = 1000
 
 let numberOfApples = 0
 
@@ -33,7 +34,7 @@ function start() {
     height: 48,
     frameX: 0,
     frameY: 0,
-    speed: 10,
+    speed: 7,
     moving: false,
   };
 
@@ -199,6 +200,7 @@ function start() {
 
 
 function startEasy() {
+  click.play()
   soundTrack.play();
   numberOfApples = easyMode
   let startDiv = document.getElementById("start");
@@ -210,6 +212,7 @@ function startEasy() {
   start();
 }
 function startNormal() {
+  click.play()
   soundTrack.play();
   numberOfApples = easyMode
   let startDiv = document.getElementById("start");
@@ -221,6 +224,7 @@ function startNormal() {
   start();
 }
 function startHard() {
+  click.play()
   soundTrack.play();
   numberOfApples = hardMode
   let startDiv = document.getElementById("start");
@@ -232,6 +236,7 @@ function startHard() {
   start();
 }
 function startImposible() {
+  click.play()
   soundTrack.play();
   numberOfApples = imposibleMode
   let startDiv = document.getElementById("start");
@@ -244,6 +249,7 @@ function startImposible() {
 }
 
 function reset(){
+  click.play()
   soundTrack.pause()
   apples = [];
   applesCatched = [];
@@ -265,6 +271,7 @@ function reset(){
 }
 
 function rerenderApples(numberOfApplesRerendered){
+  click.play()
   soundTrack.play();
   numberOfApples = numberOfApplesRerendered
 
@@ -302,7 +309,6 @@ function rerenderApples(numberOfApplesRerendered){
     apples.push(new Apples());
   }
 }
-
 
 
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppleCatcher</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./Images/apple.png" type="image/x-icon" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
         </style>
@@ -14,7 +15,8 @@
     <canvas id="canvas" style="display: none;">Your browser doesn't support canvas</canvas>
     <div id="start" style="display:block">
         <img class="logo" src="./Images/Logo.png" alt="logo">
-        <h1>Just catch some apples<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
+        <img class="apple" src="./Images/HarmfulDisgustingHellbender-max-1mb.gif">
+        <h1>You have to catch every single apple<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
         <a href="#" onclick="startEasy()">EASY</a>
         <a href="#" onclick="startNormal()">NORMAL</a>
         <a href="#" onclick="startHard()">HARD</a>
@@ -25,7 +27,8 @@
     </div>
     <div id="choose-difficulty" style="display:none">
         <img class="logo" src="./Images/Logo.png" alt="logo">
-        <h1>Just catch some apples<br>Use <img class="arrowKeys" src="./Images/arrowkeysimg.png" alt="logo">to move</h1>
+        <img class="apple" src="./Images/HarmfulDisgustingHellbender-max-1mb.gif">
+        <h1>Choose difficutly</h1>
         <a href="#" onclick="rerenderApples(easyMode)">EASY</a>
         <a href="#" onclick="rerenderApples(normalMode)">NORMAL</a>
         <a href="#" onclick="rerenderApples(hardMode)">HARD</a>
