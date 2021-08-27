@@ -18,7 +18,7 @@ let timesWon = 0
 
 let easyMode = 8
 let normalMode = 13
-let hardMode = 18
+let hardMode = 16
 let imposibleMode = 1000
 
 let numberOfApples = 0
