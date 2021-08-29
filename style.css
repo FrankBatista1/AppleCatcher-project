@@ -145,7 +145,7 @@ h1{
     position: absolute;
     left:50%;
     height: 100px;
-    top: 26%;
+    top: 20%;
     text-align: center;
     transform: translate(-50%,-50%);
 }
@@ -162,7 +162,7 @@ h1{
     text-align: center;
     font-size:1em;
     display: inline-block;
-    margin: 170px;
+    margin: 25%;
 }
 
 
