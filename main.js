@@ -1,9 +1,5 @@
-
-
-
-
 let appleEaten = new Audio('./Sound/AppleEaten2.wav');
-let soundTrack = new Audio('./Sound/01 - title screen.mp3')
+let soundTrack = new Audio('./Sound/02 Title.mp3')
 let click = new Audio('./Sound/multimedia_rollover_017.mp3')
 let loseSoundEffect = new Audio('./Sound/lose.wav')
 let winSoundEffect = new Audio("./Sound/win.wav")
@@ -13,15 +9,15 @@ let looserSoundEffect = new Audio('./Sound/533034__evretro__8-bit-game-over-soun
 let apples = [];
 let applesCatched = [];
 let keys = [];
-let timesLost = 0
-let timesWon = 0
+let timesLost = 0;
+let timesWon = 0;
 
-let easyMode = 8
-let normalMode = 13
-let hardMode = 16
-let imposibleMode = 1000
+let easyMode = 8;
+let normalMode = 13;
+let hardMode = 16;
+let imposibleMode = 1000;
 
-let numberOfApples = 0
+let numberOfApples = 0;
 
 
 function start() {
@@ -130,11 +126,6 @@ function start() {
   }
   
   
-  function startAnimating(fps) {
-    fpsInterval = 1000 / fps;
-    then = Date.now();
-    animate();
-  }
   function checkIfWin(){
     if(timesWon === 3){
       winner()
@@ -151,8 +142,13 @@ function start() {
         
       }
     }
-}
+  }
   
+  function startAnimating(fps) {
+    fpsInterval = 1000 / fps;
+    then = Date.now();
+    animate();
+  }
   
 
   function animate() {
@@ -198,8 +194,6 @@ function start() {
               apples.push(new Apples());
             }
           }
-          
-          
       }
       
       movePlayer();
